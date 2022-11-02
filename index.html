@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <title>WOWED by OWEN WILSON</title>
+
+    <body>
+
+        <p>Random Owen Wilson "WOW"</p>
+        <div id="wow">No Owen</div>
+    </body>
+
+    <script>
+        var url = "https://owen-wilson-wow-api.herokuapp.com/wows/random";
+        console.log(url);
+        fetch(url)
+            .then(function (response) {
+                return response.json();
+            }).then(function (json) {
+                console.log(json);
+                document.getElementById('wow').innerHTML = "<video controls  width='600' autoplay><source src=" + json[ 0 ][ 'video' ][ '1080p' ] + " type = 'video/mp4' >";
+            });
+    </script>
+
+</html>
